@@ -46,26 +46,26 @@ export default {
   },
   methods: {
     /** 重置表单 */
-    resetLoginForm () {
-      this.$refs.loginFormRef.resetFields()
+    resetLoginForm() {
+      this.$refs.loginFormRef.resetFields();
     },
     /** 登陆 */
-    loginClick () {
+    loginClick() {
       this.$refs.loginFormRef.validate(valid => {
-        let data = null
+        let data = null;
         // eslint-disable-next-line no-useless-return
-        if (!valid) return
+        if (!valid) return;
         login(this.loginForm.username, this.loginForm.password).then(res => {
-          data = res.data
-          if (res.meta.status !== 200) return this.$message.error('登陆失败')
+          data = res.data;
+          if (res.meta.status !== 200) return this.$message.error('登陆失败');
           // this.$message.success('登陆成功')
           // 1 将登陆成功之后的 token, 保存到客户端 sessionStorage 中
           // 1.1 项目中出了登录之外的其他API接口,必须在登陆之后才能访问
           // 1.2 token 只应在当前网站打开期间生效,所以将token 保存在sessionStorage中
           // console.log(data)
-          window.sessionStorage.setItem('token', data.token)
+          window.sessionStorage.setItem('token', data.token);
           // 2 通过编程式导航跳转到后台主页,路由地址是 /home
-          this.$router.push('/home')
+          this.$router.push('/home');
         })
       })
     }
