@@ -16,6 +16,8 @@ module.exports = {
     'space-before-function-paren': 0,
     'semi': 0,
     'comma-dangle': 0,
-    'no-trailing-spaces': 1
+    'no-trailing-spaces': 1,
+    'prefer-const': 0,
+    // 'vue/no-unused-components':0
   }
 }

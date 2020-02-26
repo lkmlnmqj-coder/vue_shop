@@ -3,7 +3,7 @@
     <el-form :model="loginForm" ref="loginFormRef" :rules="loginFormRules" label-width="0px" class="login_form">
       <!-- 用户名 -->
       <el-form-item prop="username">
-        <el-input v-model="loginForm.username" placeholder="请选输入用户名" prefix-icon="el-icon-s-custom"></el-input>
+        <el-input v-model="loginForm.username" placeholder="请选输入用户名" prefix-icon="iconfont icon-user"></el-input>
       </el-form-item>
       <!-- 密码 -->
       <el-form-item prop="password">

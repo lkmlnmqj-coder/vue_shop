@@ -10,6 +10,7 @@ export function request (config) {
   // 2.axios的拦截器
   // 2.1.请求拦截
   instance.interceptors.request.use(config => {
+    config.headers.Authorization = window.sessionStorage.getItem('token')
     // console.log(config)
     return config
   }, err => {
