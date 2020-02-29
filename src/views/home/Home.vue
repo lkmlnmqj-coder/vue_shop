@@ -8,17 +8,19 @@
       <el-container>
         <!-- 侧边栏 -->
         <el-aside :width="isCollapse">
-          <left-aside ref="menu"></left-aside>
+          <left-aside></left-aside>
         </el-aside>
         <!-- 右侧内容主体 -->
-        <el-main>Main</el-main>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
 </template>
 
 <script>
-import HeaderBar from './childHomeBar/Header';
-import LeftAside from './childHomeBar/LeftAside'
+import HeaderBar from './childHome/Header';
+import LeftAside from './childHome/LeftAside'
 
 import { mapGetters } from 'vuex'
 

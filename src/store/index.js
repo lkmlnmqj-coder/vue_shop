@@ -9,6 +9,9 @@ Vue.use(Vuex)
 
 const state = {
   isCollapse: false, // 是否折叠
+  menuActive: '', // 菜单点击高亮
+  addDialogVisible: false, // 显示添加用户对话框
+  isShowEditDialog: false, // 显示修改用户对话框
 }
 
 const store = new Vuex.Store({

@@ -6,10 +6,12 @@
     text-color="#fff"
     active-text-color="#4e9df9"
     unique-opened
-    :collapse="getCollapse()"
-    :collapse-transition="false">
+    :collapse="getCollapse"
+    :collapse-transition="false"
+    router
+    :default-active="actionPath">
     <!-- 一级菜单 -->
-    <el-submenu :index="item.id + ''" v-for="item in menuList" :key="item.id">
+    <el-submenu :index="index(item.id)" v-for="item in menuList" :key="item.id">
       <!-- 一级菜单的模版区域 -->
       <template slot="title">
         <!-- 图标 -->
@@ -53,10 +55,20 @@ export default {
         102: 'iconfont icon-danju',
         145: 'iconfont icon-baobiao'
       },
+      // 被激活的链接地址
+      actionPath: ''
     }
   },
-  methods: {
+  created() {
+    this.actionPath = window.sessionStorage.getItem('actionPath')
+  },
+  computed: {
     ...mapGetters(['getCollapse']),
+  },
+  methods: {
+    index(id) {
+      return id + ''
+    },
   }
 }
 

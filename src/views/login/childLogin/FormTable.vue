@@ -57,6 +57,7 @@ export default {
         if (!valid) return;
         login(this.loginForm.username, this.loginForm.password).then(res => {
           data = res.data;
+          console.log(res);
           if (res.meta.status !== 200) return this.$message.error('登陆失败');
           // this.$message.success('登陆成功')
           // 1 将登陆成功之后的 token, 保存到客户端 sessionStorage 中
